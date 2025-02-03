@@ -320,6 +320,7 @@ namespace Jellyfin.Server.Implementations.Users
                     AudioLanguagePreference = user.AudioLanguagePreference,
                     RememberAudioSelections = user.RememberAudioSelections,
                     EnableNextEpisodeAutoPlay = user.EnableNextEpisodeAutoPlay,
+                    AutoPlayDurationHours = user.AutoPlayDurationHours,
                     RememberSubtitleSelections = user.RememberSubtitleSelections,
                     SubtitleLanguagePreference = user.SubtitleLanguagePreference ?? string.Empty,
                     OrderedViews = user.GetPreferenceValues<Guid>(PreferenceKind.OrderedViews),
@@ -616,6 +617,7 @@ namespace Jellyfin.Server.Implementations.Users
                 user.AudioLanguagePreference = config.AudioLanguagePreference;
                 user.RememberAudioSelections = config.RememberAudioSelections;
                 user.EnableNextEpisodeAutoPlay = config.EnableNextEpisodeAutoPlay;
+                user.AutoPlayDurationHours = config.AutoPlayDurationHours;
                 user.RememberSubtitleSelections = config.RememberSubtitleSelections;
                 user.SubtitleLanguagePreference = config.SubtitleLanguagePreference;
 

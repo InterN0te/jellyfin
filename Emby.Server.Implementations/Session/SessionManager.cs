@@ -1245,6 +1245,9 @@ namespace Emby.Server.Implementations.Session
             if (user is not null
                 && command.ItemIds.Length == 1
                 && user.EnableNextEpisodeAutoPlay
+                && (user.AutoPlayDurationHours == 0 ||
+                    (session.LastPlaybackCheckIn != default &&
+                     (DateTime.UtcNow - session.LastPlaybackCheckIn).TotalHours < user.AutoPlayDurationHours))
                 && _libraryManager.GetItemById(command.ItemIds[0]) is Episode episode)
             {
                 var series = episode.Series;

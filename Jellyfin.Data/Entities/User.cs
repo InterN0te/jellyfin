@@ -56,6 +56,7 @@ namespace Jellyfin.Data.Entities
             RememberAudioSelections = true;
             RememberSubtitleSelections = true;
             EnableNextEpisodeAutoPlay = true;
+            AutoPlayDurationHours = 1;
             EnableAutoLogin = false;
             PlayDefaultAudioTrack = true;
             SubtitleMode = SubtitlePlaybackMode.Default;
@@ -238,6 +239,15 @@ namespace Jellyfin.Data.Entities
         /// Required.
         /// </remarks>
         public bool EnableNextEpisodeAutoPlay { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number of hours before disabling autoplay (0 means unlimited).
+        /// Only applies when EnableNextEpisodeAutoPlay is true.
+        /// </summary>
+        /// <remarks>
+        /// Required.
+        /// </remarks>
+        public int AutoPlayDurationHours { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the user should auto-login.

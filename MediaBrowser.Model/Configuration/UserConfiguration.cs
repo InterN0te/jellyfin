@@ -16,6 +16,7 @@ namespace MediaBrowser.Model.Configuration
         public UserConfiguration()
         {
             EnableNextEpisodeAutoPlay = true;
+            AutoPlayDurationHours = 1;
             RememberAudioSelections = true;
             RememberSubtitleSelections = true;
 
@@ -69,6 +70,12 @@ namespace MediaBrowser.Model.Configuration
         public bool RememberSubtitleSelections { get; set; }
 
         public bool EnableNextEpisodeAutoPlay { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number of hours before disabling autoplay (0 means unlimited).
+        /// Only applies when EnableNextEpisodeAutoPlay is true.
+        /// </summary>
+        public int AutoPlayDurationHours { get; set; }
 
         /// <summary>
         /// Gets or sets the id of the selected cast receiver.
